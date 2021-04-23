@@ -1,0 +1,49 @@
+<h1 class="my-3 text-primary">
+  Listar Filmes
+  <button type="button" routerLink="/filmes/cadastrar" class="btn btn-success mt-2 float-right">Cadastrar</button>
+</h1>
+
+<div class="card shadow">
+
+<table class="table table-responsive table-stripped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Lançamento</th>
+      <th>Orçamento</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Aqui vai o for para repetir os valores contidos no array de objetos do arquivo .ts-->
+    <tr *ngFor="let film of listaFilmes">
+      <td>{{film.id}}</td>
+      <td>{{film.nome}}</td>
+      <td>{{film.lancamento | date: "shortDate"}}</td>
+      <td>{{film.orcamento | currency: 'BRL'}}</td>
+      <td>
+        <button
+        class="btn btn-warning"
+        routerLink="/filmes/atualizar/{{film.id}}">
+          <i class= "fa fa-pencil" aria-hidden="true"></i>
+        </button>
+        <button
+        class="btn btn-danger ml-2"
+        [swal]="{
+          title: 'ATENÇÃO!',
+          text: 'Deseja realmente excluir o filme: ' + film.nome + '?',
+          showDenyButton: true,
+          denyButtonText: 'Não',
+          confirmButtonText: 'Sim, excluir!',
+          icon: 'warning'
+        }" (confirm)="deletar(film)"
+        >
+          <i class= "fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

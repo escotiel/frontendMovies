@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="foto" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">
+      {{nomeFilme | uppercase}} <br>
+      <span *ngIf="cartaz; else elseBlock" class="badge badge-success">Em cartaz</span>
+      <ng-template #elseBlock>
+        <span class="badge badge-primary">Não está em cartaz</span>
+      </ng-template>
+    </h6>
+    <div>
+    <h6>
+      <p class="card-text">
+        ID: {{idFilme | number: '1.0-0' }}<br>
+        Lançamento no Brasil: {{lancamento | date: "dd/MM/yy"}} <br>
+        Orçamento: {{orcamento | currency: "BRL" : "symbol" : "1.2-3" }}<br><br>
+        <a href="#" class="btn btn-primary float-right">Assistir</a>
+     </p>
+    </h6>
+  </div>
+</div>
+

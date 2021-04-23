@@ -1,0 +1,35 @@
+<!--<h3>Atividade final - Robson Escotiel</h3>
+<div class="class row">
+  <div class="class col">
+    <img class="img-fluid" src="assets/img/01.jpg" alt="">
+  </div>
+  <div class="class col">
+    <img class="img-fluid" src="assets/img/02.jpg" alt="">
+  </div>
+</div>-->
+
+<h4 class="text-danger">{{ anuncio }}</h4>
+
+<div class="row">
+  <div class="col">
+    <!--Propriedades vindas do arquivo card-filme.components.ts-->
+    <app-card-filme
+      [foto]="foto"
+      [nomeFilme]="nomeFilme"
+      [lancamento]="lancamento"
+      [idFilme]="idFilme"
+      [orcamento]="orcamento"
+      [cartaz]="cartaz"
+    ></app-card-filme>
+  </div>
+  <div class="col">
+    <app-card-filme
+      foto="https://upload.wikimedia.org/wikipedia/pt/8/87/Spider-Man_Homecoming.png"
+      nomeFilme="Homem Aranha: Homecoming"
+      lancamento="2017-07-06"
+      idFilme="12"
+      orcamento="175000000"
+      cartaz="false"
+    ></app-card-filme>
+  </div>
+</div>

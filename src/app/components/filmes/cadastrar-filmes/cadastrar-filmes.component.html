@@ -1,0 +1,68 @@
+<h1 class="my-3 text-primary">Cadastrar Filme</h1>
+
+<div class="card shadow">
+  <form class="m-3">
+    <div class="row">
+      <div class="col md-12">
+        <div class="form-group">
+          <label for="nome">Nome do Filme</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o nome do Filme:"
+            name="nomeFilme"
+            [(ngModel)]="filme.nome"
+          />
+        </div>
+      </div>
+    </div>
+    <!--Fim row nome-->
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lancamento">Lançamento no Brasil</label>
+          <input
+            type="date"
+            class="form-control"
+            name="lancamento"
+            [(ngModel)]="filme.lancamento"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="orcamento">Orçamento</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="0.00"
+            name="orcamento"
+            [(ngModel)]="filme.orcamento"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-default" routerLink="/filmes">Voltar</button>
+        <button class="btn btn-success float-right" (click)="salvarFilme()">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+
+
+</div>
+
+  <!-- Card para teste do two way event binds
+  <div class="card mt-3">
+    <p>Nome: {{ nome }}</p>
+    <p>Lançamento no Brasil: {{ lancamento }}</p>
+    <p>Orçamento: {{ orcamento }}</p>
+  </div>-->
+
+
