@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { IFilme } from './../model/IFilme.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,7 +12,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class FilmesService {
   //variável que indica onde no backend as informações serão pesquisadas
-  private URL: string = 'http://localhost:3000/filmes';
+  private URL: string = environment.URL;
 
   constructor(private http: HttpClient, private toastr: ToastrService) {}
 
